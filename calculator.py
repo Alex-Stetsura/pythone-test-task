@@ -1,7 +1,7 @@
 def main(input: str) -> str:
     parts = input.split()
     if len(parts) != 3:
-        return "Введите 'число оператор число'"
+        return "Ошибка! Формат: 'число оператор число'"
     
     a, operator, b = parts
     
@@ -9,10 +9,10 @@ def main(input: str) -> str:
         a = int(a)
         b = int(b)
     except ValueError:
-        return "Только целые числа"
+        return "Ошибка: нужны целые числа"
     
     if not (1 <= a <= 10) or not (1 <= b <= 10):
-        return "Числа от 1 до 10"
+        return "Числа должны быть от 1 до 10"
     
     if operator == '+':
         result = a + b
